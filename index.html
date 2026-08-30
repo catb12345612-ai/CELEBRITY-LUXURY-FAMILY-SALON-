@@ -183,18 +183,18 @@
 
         <div class="success" id="successMsg">✓ Copied! Redirecting to Google...</div>
     </div>
-
-    <script>
-        function copyAndOpen(button) {
-            const text = button.previousElementSibling.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                document.getElementById("successMsg").style.display = "block";
-                setTimeout(() => {
-                    // Replace with your valid full Google Maps URL (e.g., https://maps.app.goo.gl/...)
-                    window.location.href = "https://maps.app.goo.gl/vn63LcSiNwcmeRuc8";
-                }, 600);
-            });
-        }
-    </script>
-</body>
-</html>
+<script>
+    function copyAndOpen(button) {
+        const text = button.previousElementSibling.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            document.getElementById("successMsg").style.display = "block";
+            
+            // Transform the button into a direct clickable link to bypass mobile browser security blocks
+            button.innerText = "Open Google Maps ↗";
+            button.style.backgroundColor = "#4caf50";
+            button.onclick = function() {
+                window.location.href = "https://maps.app.goo.gl/vn63LcSinWcmeRuc8";
+            };
+        });
+    }
+</script>
