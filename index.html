@@ -180,21 +180,15 @@
                 <button class="btn" onclick="copyAndOpen(this)">Copy & Open</button>
             </div>
         </div>
-
-        <div class="success" id="successMsg">✓ Copied! Redirecting to Google...</div>
-    </div>
-
-    <script>
-        function copyAndOpen(button) {
-            const text = button.previousElementSibling.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                document.getElementById("successMsg").style.display = "block";
-                setTimeout(() => {
-                    // PASTE YOUR LONG GOOGLE MAPS LINK HERE INSIDE THE QUOTES
-                    window.location.href = "https://maps.app.goo.gl/EUc7aUVGfpgPkkXA7";
-                }, 600);
-            });
-        }
-    </script>
-</body>
-</html>
+<script>
+    function copyAndOpen(button) {
+        const text = button.previousElementSibling.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            document.getElementById("successMsg").style.display = "block";
+            setTimeout(() => {
+                // Your direct Google Maps short link
+                window.location.href = "https://maps.app.goo.gl/vn63LcSiNwcmeRuc8";
+            }, 600);
+        });
+    }
+</script>
